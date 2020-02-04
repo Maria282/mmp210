@@ -1,0 +1,40 @@
+body {
+	background: rgb(233,87,151);
+background: radial-gradient(circle, rgba(233,87,151,1) 0%, rgba(173,220,123,1) 81%, rgba(168,233,148,1) 100%);
+color: white;
+font-family: Impact;
+font-size: 20px;
+}
+
+h1, p {
+	font-size: 20px;
+	text-align: center;
+}
+
+a {
+	color: white;
+	transition: color 300ms ease-in;
+
+}
+
+  a:hover {
+	color:#e97d7d;
+}
+
+img {
+	max-width: 100%;
+
+}
+
+ #container {
+	max-width: 600px
+	margin: 0 auto;
+	text-align: center;
+
+
+}
+
+  .link {
+	list-style: none;
+	text-align: center;
+}
