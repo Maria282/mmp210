@@ -33,13 +33,41 @@ function draw() {
 	rectMode(CENTER);
 	rect(200,220,20,15,10);
 
-	// right ear
-	fill(235,167,138,92)
-	arc(290,180,40, 60, -HALF_PI, HALF_PI);
-	arc(290,180,30, 50, -HALF_PI, HALF_PI);
-
 	// shapes that are only xy points
-	line(250,93,250,260)
+	fill(71,42,14)
+	rect(100,185,35,185,10)
+	rect(286,185,50,185,10)
+	rect(200,99,235,40,10)
 
+	// right cheek
+	noStroke()
+    fill(245,90,82)
+	ellipse(240,190,20);
+
+	// left cheek
+	noStroke()
+	fill(245,90,82)
+	ellipse(135,190,20)
+
+	// flower #1
+	fill(245,196,93)
+	ellipse(520,60,15)
+	ellipse(500,80,15)
+	ellipse(540,80,15)
+	ellipse(520,100,15)
+
+	// flower #2
+	fill(245,69,59)
+	ellipse(410,130,15)
+	ellipse(390,150,15)
+	ellipse(430,150,15)
+	ellipse(410,170,15)
+
+    // flower #3
+    fill(101,114,255);
+    ellipse(410,220,15);
+    ellipse(390,240,15);
+    ellipse(430,240,15);
+    ellpise(410,220,15);
 
 }
