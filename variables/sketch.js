@@ -2,7 +2,7 @@ var x = 200;
 var y = 180;
 
      // size variables
-var s = 200; 
+var s = 100; 
 
      
 function setup() {
@@ -19,23 +19,24 @@ function draw() {
 
 	// face area 
 	fill(255,178,117,100);
-	ellipse(x+100, y, s); 
+	ellipse(200, y - 100, 200); 
 	x++;
-	//s++;
+	s++;
+	y++;
 
 	//right eye
 	fill(0,0,0);
-	ellipse(x + 20,160,20);
+	ellipse(220,y - 100,20);
 
 	fill(255,255,255);
-	ellipse(224,155,8); 
+	ellipse(224,y - 100,8); 
 
 	//left eye
 	fill(0,0,0)
-	ellipse(160, 160,20,20); 
+	ellipse(160, y - 100,20,20); 
 
 	fill(255,255,255)
-	ellipse(164, 155, 8)
+	ellipse(164, y - 100, 8)
 
 	// mouth
 	fill(255,255,255)
@@ -60,23 +61,23 @@ function draw() {
 
 	// flower #1
 	fill(245,196,93)
-	ellipse(520,60,15)
-	ellipse(500,80,15)
-	ellipse(540,80,15)
-	ellipse(520,100,15)
+	ellipse(520,60,s/5)
+	ellipse(500,80,s/6)
+	ellipse(540,80,s/7)
+	ellipse(520,100,s/8)
 
 	// flower #2
 	fill(245,69,59)
-	ellipse(410,130,15)
-	ellipse(390,150,15)
-	ellipse(430,150,15)
-	ellipse(410,170,15)
+	ellipse(410,130,s/5)
+	ellipse(390,150,s/6)
+	ellipse(430,150,s/7)
+	ellipse(410,170,s/8)
 
     // flower #3
     fill(101,114,255);
-    ellipse(410,220,15);
-    ellipse(390,240,15);
-    ellipse(430,240,15);
-    ellipse(410,220,15);
+    ellipse(410,220,s/5);
+    ellipse(390,240,s/6);
+    ellipse(430,240,s/7);
+    ellipse(410,220,s/8);
 
 }
