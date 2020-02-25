@@ -1,5 +1,5 @@
 //position variables
-var x = 200;
+var x; // 200;
 var y = 180;
 
      // size variables
@@ -9,45 +9,46 @@ var s = 100;
 function setup() {
 	//setup scope
 	createCanvas(660, 670);
-	rectMode(CENTER);
+	x = width/2;
 }
 
 function draw() {
 	//draw scope
 	background(165, 118, 232, 91)
 
-	//svar x = mouseX;
-	var y = mouseY;
-	var offset = 20;
-
 	// shapes with xy coordinate + size
 
  
 	// face area 
 	fill(255,178,117,100);
-	ellipse(x, y, 200); 
+	ellipse(200,y, 200); 
 	//x++;
-	s++;
+	//s++;
 	//y++;
 
 	//right eye
 	fill(0,0,0);
-	ellipse(x + offset, y - 20,20);
+	ellipse(220,y - 20,20);
 
 	fill(255,255,255);
-	ellipse(offset + 4 + x, y - 25, 8); 
+	ellipse(224,y - 25,8); 
 
 	//left eye
 	fill(0,0,0)
-	ellipse(x - offset - 20, y - 20,20); 
+	ellipse(160, y - 20,20,20); 
 
 	fill(255,255,255)
-	ellipse(x - offset - 16, y - 25, 8)
+	ellipse(164, y - 25, 8)
 
 	// mouth
 	fill(255,255,255)
 	rectMode(CENTER);
-	rect(200,y + 40,20,15,10);
+
+		var mouthHeight = map(mouseX, 0, width, 10, 150);
+
+	rect(200,y + 40,20, mouthHeight,10);
+
+
 
 	// shapes that are only xy points
 	fill(71,42,14)
@@ -67,23 +68,24 @@ function draw() {
 
 	// flower #1
 	fill(245,196,93)
-	ellipse(520,60,s/1.5)
-	ellipse(500,80,s/1.5)
-	ellipse(540,80,s/1.5)
-	ellipse(520,100,s/1.5)
+	ellipse(520,60,15)
+	ellipse(500,80,15)
+	ellipse(540,80,15)
+	ellipse(520,100,15
+		)
 
 	// flower #2
 	fill(245,69,59)
-	ellipse(410,130,s/1.5)
-	ellipse(390,150,s/1.5)
-	ellipse(430,150,s/1.5)
-	ellipse(410,170,s/1.5)
+	ellipse(410,130,15)
+	ellipse(390,150,15)
+	ellipse(430,150,15)
+	ellipse(410,170,15)
 
     // flower #3
     fill(101,114,255);
-    ellipse(410,220,s/1);
-    ellipse(390,240,s/1);
-    ellipse(430,240,s/1);
-    ellipse(410,220,s/1);
+    ellipse(410,220,15);
+    ellipse(390,240,15);
+    ellipse(430,240,15);
+    ellipse(410,220,15);
 
 }
