@@ -1,5 +1,14 @@
 
 
+// global scope
+var catImage;
+
+function preload(){
+	catImage = loadImage("cat.jpg");
+
+}
+
+
 function setup() {
 	var canvas = createCanvas(500, 500);
 	canvas.drawingContext.miterLimit = 2;
@@ -7,6 +16,9 @@ function setup() {
 
 function draw() {
 	background(165, 118, 232, 91);
+
+	// draw the image
+	image(catImage, 0, 0, 500,500);
 
 	var str = "MMP210 Class";
 	var w = textWidth(str);
