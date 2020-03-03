@@ -20,23 +20,24 @@ function draw() {
 	// draw the image
 	image(catImage, 0, 0, 500,500);
 
-	var paragraph = "When you didn't do your homework and you have to present it in 5 minutes";
+	var str = "When you didn't do your homework and you have to present it in 5 minutes";
 	var w = textWidth(str);
 	var x = 0;
 	var y = 250;
 
-	textSize(25);
-	fill("white");
-	textFont('Verdana');
-	textAlign(CENTER);
-	text(paragraph, x, y - 230, 500, 350);
+	textSize(15);
+	fill("pink");
+	textStyle(ITALIC);
+	textFont('Arial');
+	textAlign(LEFT,CENTER);
+	text(str, x, y);
 	//stroke('pink');
 	//line(x + 10, y - -30, x + w + 250, y + 30);
 	y+=100;
 
-	textSize(50);
-	//stroke('green');
-	//strokeWeight(5);
+	textSize(30);
+	stroke('green');
+	strokeWeight(5);
 	textStyle(BOLD);
 	textAlign(CENTER, TOP);
 	textFont('Verdana');
@@ -44,5 +45,5 @@ function draw() {
 	
 	var welcome = "HELP!" ;
 	var end = map(frameCount, 0, 200, 0, welcome.length);
-	text(welcome.substring(0, end), 395, 350);
+	text(welcome.substring(0, end), 250, 350);
 }
