@@ -20,15 +20,15 @@ function draw() {
 	// draw the image
 	image(catImage, 0, 0, 500,500);
 
-	var str = "MMP210 Class";
+	var str = "When you didn't do your homework and you have to present it in 5 minutes";
 	var w = textWidth(str);
 	var x = 0;
 	var y = 250;
 
-	textSize(75);
+	textSize(30);
 	fill("pink");
 	textStyle(ITALIC);
-	textFont('Brush Script MT');
+	textFont('Arial');
 	textAlign(LEFT,CENTER);
 	text(str, x, y);
 	stroke('pink');
@@ -43,7 +43,7 @@ function draw() {
 	textFont('Verdana');
 
 	
-	var welcome = 'Welcome to my website';
+	var welcome = "HELP!" ;
 	var end = map(frameCount, 0, 200, 0, welcome.length);
 	text(welcome.substring(0, end), 250, 350);
 }
