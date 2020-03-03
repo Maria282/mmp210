@@ -25,14 +25,14 @@ function draw() {
 	var x = 0;
 	var y = 250;
 
-	textSize(30);
+	textSize(15);
 	fill("pink");
 	textStyle(ITALIC);
 	textFont('Arial');
 	textAlign(LEFT,CENTER);
 	text(str, x, y);
-	stroke('pink');
-	line(x + 10, y - -30, x + w + 250, y + 30);
+	//stroke('pink');
+	//line(x + 10, y - -30, x + w + 250, y + 30);
 	y+=100;
 
 	textSize(30);
