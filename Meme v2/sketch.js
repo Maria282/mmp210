@@ -1,12 +1,16 @@
 
 
 // global scope
-var catImage;
-var guyImage;
+var womanImage;
+var catImage
 
-function preload(){
+var counter = 0;
+var x;
+var y;
+
+function preload() {
+	womanImage = loadImage("woman.jpg")
 	catImage = loadImage("cat.jpg");
-	guyImage = loadImage("guy.jpg");
 
 }
 
@@ -14,18 +18,28 @@ function preload(){
 function setup() {
 	var canvas = createCanvas(500, 500);
 	canvas.drawingContext.miterLimit = 2;
+
+	x = width - 150;
+	y = height - 100;
+}
+
+function mousePressed() {
+	counter++;
+	if (counter == 2) {
+		counter = 0;
+	}
 }
 
 function draw() {
 	background(165, 118, 232, 91);
 
 	// draw the image
-	if (mouseIsPressed){
-		image(guyImage, 0, 0, width, height);
-	} else {
+	if (counter == 0) {
+		image(womanImage, 0, 0, width, height);
+	} else if (counter == 1) {
 		image(catImage, 0, 0, width, height);
 	}
-	
+
 
 	var paragraph = "When you didn't do your homework and you have to present it in 5 minutes";
 	var w = textWidth(str);
@@ -37,19 +51,15 @@ function draw() {
 	textFont('Verdana');
 	textAlign(CENTER);
 	text(paragraph, x, y - 230, 500, 350);
-	//stroke('pink');
-	//line(x + 10, y - -30, x + w + 250, y + 30);
+	
 	y+=100;
 
-	textSize(50);
-	//stroke('green');
-	//strokeWeight(5);
-	textStyle(BOLD);
-	textAlign(CENTER, TOP);
-	textFont('Verdana');
+	if (mousePressed){
+	 paragraph = "HELP!" ;
 
-	
-	var welcome = "HELP!" ;
-	var end = map(frameCount, 0, 200, 0, welcome.length);
-	text(welcome.substring(0, end), 395, 350);
+}
+	var end = map(frameCount, 0, 200, 0, paragraph.length);
+	text(paragraph.substring(0, end), 395, 350);
+
+
 }
