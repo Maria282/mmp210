@@ -1,10 +1,10 @@
 
-
 // global scope
 var womanImage;
 var catImage
 
 var counter = 0;
+var paragraph = "When you spend all night doing ur homework and you didn't sleep well";
 var x;
 var y;
 
@@ -28,6 +28,10 @@ function mousePressed() {
 	if (counter == 2) {
 		counter = 0;
 	}
+
+	if (mousePressed) {
+	  paragraph = "And the professor want to check it for the next class";
+        }
 }
 
 function draw() {
@@ -40,8 +44,6 @@ function draw() {
 		image(catImage, 0, 0, width, height);
 	}
 
-
-	var paragraph = "When you didn't do your homework and you have to present it in 5 minutes";
 	var w = textWidth(str);
 	var x = 0;
 	var y = 250;
@@ -53,13 +55,5 @@ function draw() {
 	text(paragraph, x, y - 230, 500, 350);
 	
 	y+=100;
-
-	if (mousePressed){
-	 paragraph = "HELP!" ;
-
-}
-	var end = map(frameCount, 0, 200, 0, paragraph.length);
-	text(paragraph.substring(0, end), 395, 350);
-
 
 }
