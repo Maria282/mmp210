@@ -2,75 +2,61 @@
 dom example
 4.15.2020
 */
-
-let imput, button, greeting;
+var blueSlider;
 
 function setup() {
 	createCanvas(640, 360);
-	pattern();
-	
+	stroke(5);
+    
 
-	input = createInput();
-	input.position(560,275);
+    var patternButton = createButton('New pattern');
+    patternButton.mousePressed(pattern);
+    patternButton.position(630, 620);
 
-	var button = createButton("submit");
-	button.position(input.x + input.width, 275);
-	button.mousePressed(greet);
+    var saveButton = createButton('Save Image');
+    saveButton.mousePressed(save);
+    saveButton.position(730, 620);
 
-	var patternButton = createButton("Clean");
-	patternButton.mousePressed(pattern);
+    blueSlider = createSlider(0, 255, 200);
+    blueSlider.input(pattern);
 
-	var saveButton = createButton("Save Image");
-	saveButton.mousePressed(saveImage);
+    pattern();
 
-	greeting = createElement('h2', 'Where are you from?');
-	greeting.position(560, 270);
-    textAlign(CENTER);
-	textSize(20);
-
-	rSlider = createSlider(0, 255, 100);
-	rSlider.position(560, 650);
-
+  
 }
 
-function draw() {
-	const r = rSlider.value();
-	text(name, rSlider);
+
+
+function saveImage() {
+	save("pattern.png");
 }
 
 function pattern() {
-	background('pink');
+    background("lightpink");
 
-	for (let x = 0; x < 200; x++) {
+    for (let x = 50; x <= width; x += 100) {
 
-        push();
-        translate(random(width), random(height));
-		rotate(0.1 * PI);
-		text(name, random(width), random(height));
-		pop();
-	}
+    	let r = random(100);
+    	let g = random(100, 200);
+    	let b = random(blueSlider.value());
 
+    	let s = random(40, 120);
+    	let y = random(s/2, height - s/2);
+     
+    fill(r, g, b);
+    ellipse(x, random(100, 200), random(200,100));
+    fill(235, 77, 45, 92);
+    ellipse(x, random(50, 100), random(100, 150));
+    fill(97, 167, 255, 100);
+    ellipse(x, random(200, 300), random(100, 150));
+    fill(r, g, b);
+    ellipse(x, random(300, 500), random(200, 500));
+    fill(142, 235, 64, 92);
+    ellipse(x, random(50, 300), random(200, 300));
+
+   
+
+
+    }
 
 }
-
-
-function greet() {
-	const name = input.value();
-	greeting.html("beautiful country");
-	input.value('');
-
-
-	for (let i = 0; i < 200; i++){
-		push();
-		fill(random(255), 255, 255);
-		translate(random(width), random(height));
-		rotate(random(2 * PI));
-		text(name, 0, 0);
-		pop();
-	}
-}
-
-function saveImage() {
-	save("pattern.jpg")
-}
-
