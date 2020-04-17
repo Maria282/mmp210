@@ -2,12 +2,25 @@
 dom example
 4.15.2020
 */
-var blueSlider;
+var slider;
+var input;
+
 
 function setup() {
 	createCanvas(640, 360);
-	stroke(5);
-    
+	//canvas.parent("sketch");
+	//colorMode(HSB, 255);
+
+	input = createInput('Where are you from?');
+	input.position(630, 270);
+
+	button = createButton('submit');
+	button.position(input.x + input.width, 270);
+	button.mousePressed(pattern);
+
+    var reset = createButton('Reset');
+    reset.position(860, 270);
+    reset.mousePressed(resetText);
 
     var patternButton = createButton('New pattern');
     patternButton.mousePressed(pattern);
@@ -16,15 +29,23 @@ function setup() {
     var saveButton = createButton('Save Image');
     saveButton.mousePressed(save);
     saveButton.position(730, 620);
-
-    blueSlider = createSlider(0, 255, 200);
-    blueSlider.input(pattern);
+    
+    createP('Change Color');
+    slider = createSlider(0, 255, 127);
+    slider.position(870, 620)
+    slider.input(pattern);
 
     pattern();
 
   
 }
 
+function resetText() {
+
+	text(input.value(''));
+	pattern('');
+
+}
 
 
 function saveImage() {
@@ -32,27 +53,34 @@ function saveImage() {
 }
 
 function pattern() {
-    background("lightpink");
+    background(slider.value(), 255, 255);
 
-    for (let x = 50; x <= width; x += 100) {
+    for (let x = 0; x < width; x += 100) {
 
-    	let r = random(100);
-    	let g = random(100, 200);
-    	let b = random(blueSlider.value());
+    	
 
     	let s = random(40, 120);
     	let y = random(s/2, height - s/2);
-     
-    fill(r, g, b);
-    ellipse(x, random(100, 200), random(200,100));
-    fill(235, 77, 45, 92);
-    ellipse(x, random(50, 100), random(100, 150));
-    fill(97, 167, 255, 100);
-    ellipse(x, random(200, 300), random(100, 150));
-    fill(r, g, b);
-    ellipse(x, random(300, 500), random(200, 500));
-    fill(142, 235, 64, 92);
+
+    noStroke();
+    fill(255, 90, 89, 100);
+    ellipse(x, random(100, 300), random(200,100));
+    noStroke();
+    fill(185, 107, 232, 91);
+    ellipse(x, random(150, 50), random(100, 150));
+    noStroke();
+    fill(255, 232, 66, 100);
+    ellipse(x, random(200, 400), random(100, 100));
+    noStroke();
+    fill(91, 255, 99, 100);
     ellipse(x, random(50, 300), random(200, 300));
+
+    textAlign(CENTER, CENTER);
+    textSize(80);
+    fill('black');
+    stroke('white');
+    strokeWeight(20);
+    text(input.value(), width/2, height/2);
 
    
 
