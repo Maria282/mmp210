@@ -2,7 +2,7 @@ body {
 	background: rgb(63,94,251);
 background: linear-gradient(187deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
 color: white;
-font-family: Impact;
+font-family: Aclonica;
 font-size: 35px;
 text-align: center;
 }
@@ -19,7 +19,7 @@ h1,  {
 
 h2 {
 	font-size: 10px;
-	font-family: Bodoni MT;
+	font-family: Aclonica;
 	text-align: center;
 	text-decoration: underline;
 }
