@@ -4,7 +4,7 @@ Final Project
 */
 
 //global sound variables
-var powerupSound, laserSound, pickSound, deadSound;
+var powerupSound, laserSound,  deadSound;
 var music;
 
 function preload() {
