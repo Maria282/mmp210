@@ -14,7 +14,7 @@ function preload() {
 	laserSound = loadSound('laser.wav');
 	deadSound = loadSound('deadsound.wav');
 
-	menu = loadImage('menu.gif');
+	
 	laser = loadImage('laser.gif');
 	heart = loadImage('heart.gif');
 	dead = loadImage('dead.gif');
